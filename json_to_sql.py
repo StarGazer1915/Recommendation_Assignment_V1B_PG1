@@ -15,13 +15,17 @@ def write_to_rdb(col):
         print("Connection established : Postgres")
         
         # insert data naar de postgresDB
-        for y in col.find({},{"_id", "gender", "price"}):
+        for y in col.find({},{"_id", "gender", "price","recommendable","category","sub_category","sub_sub_category","properties","sm"}):
             try:
-                cur.execute('insert into products (product_id, price, gender) values (%s,%s,%s)',(y['_id'],y["price"]["selling_price"],y['gender']))
+                cur.execute('insert into products (products_id, price, in_stock,active,recommendable, gender, category, sub_category, sub_sub_category) values (%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+                (y["_id"],y["price"]["selling_price"],y["properties"]["stock"],y["sm"]["is_active"],y["recommendable"],y["gender"], y["category"], y["sub_category"], y["sub_sub_category"]))
+
             except KeyError:
                 continue
-        # commit inserts
+
+        # commit inserts 
         conn.commit()
+        print("Data Commited")
 
     except pysql.OperationalError as x:
         print(f"Connection error: {x}")
@@ -39,7 +43,6 @@ def get_collection_mongo(col):
         collection = db[col]
         print(f"Mongo connection established : {col}")
         client.close()
-        # return collection
         write_to_rdb(collection)
     except:
         print(f"Mongo connection failed : {col}")
