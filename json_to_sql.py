@@ -15,6 +15,7 @@ def write_to_rdb(col):
         print("Connection established : Postgres")
         
         # insert data naar de postgresDB
+        print("Prossessing data")
         for y in col.find({},{"_id", "gender", "price","recommendable","category","sub_category","sub_sub_category","properties","sm"}):
             try:
                 cur.execute('insert into products (products_id, price, in_stock,active,recommendable, gender, category, sub_category, sub_sub_category) values (%s,%s,%s,%s,%s,%s,%s,%s,%s)',
