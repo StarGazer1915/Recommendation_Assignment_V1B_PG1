@@ -1,8 +1,7 @@
-from pprint import *
 import psycopg2 as pysql
 import pymongo as pym
 
-def write_to_rdb(col):
+def connect_to_rdb(col):
     try:
         # maak connectie naar de postgresDB
         conn = pysql.connect(
@@ -13,7 +12,17 @@ def write_to_rdb(col):
         )
         cur = conn.cursor()
         print("Connection established : Postgres")
-        
+        write_to_rdb(col,cur,conn)
+    except pysql.OperationalError as x:
+        print(f"Connection error : {x}")
+    
+    finally:
+        # Sluit de cursor
+        cur.close()
+        # sluit connectie
+        conn.close()
+
+def write_to_rdb(col,cur,conn):
         # insert data naar de postgresDB
         print("Prossessing data")
         for y in col.find({},{"_id", "gender", "price","recommendable","category","sub_category","sub_sub_category","properties","sm"}):
@@ -28,15 +37,6 @@ def write_to_rdb(col):
         conn.commit()
         print("Data Commited")
 
-    except pysql.OperationalError as x:
-        print(f"Connection error: {x}")
-    
-    finally:
-        # Sluit de cursor
-        cur.close()
-        # sluit connectie
-        conn.close()
-
 def get_collection_mongo(col):
     try:
         client = pym.MongoClient("localhost",27017)
@@ -44,7 +44,7 @@ def get_collection_mongo(col):
         collection = db[col]
         print(f"Mongo connection established : {col}")
         client.close()
-        write_to_rdb(collection)
+        connect_to_rdb(collection)
     except:
         print(f"Mongo connection failed : {col}")
 
