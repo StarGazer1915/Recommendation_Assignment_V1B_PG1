@@ -27,8 +27,7 @@ def connect_to_rdb(col,collection):
             products_to_rdb(col,cur,conn,collection)
         elif collection == "visitors":
             visitors_to_rdb(col,cur,conn,collection)
-        elif collection == "sessions":
-            pass
+
     except pysql.OperationalError as x:
         print(f"Connection error : {x}")
     
@@ -81,6 +80,6 @@ def get_collection_mongo(collection):
         print(f"Mongo connection failed : {collection}")
 
 get_collection_mongo("products")
-# get_collection_mongo("sessions")
-# get_collection_mongo("visitors")
+
+get_collection_mongo("visitors")
 
