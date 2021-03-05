@@ -1,1 +1,0 @@
-CREATE TABLE Product (ID SERIAL NOT NULL, price int4 NOT NULL, in_stock bool NOT NULL, active bool NOT NULL, recommendable bool NOT NULL, gender varchar(255) NOT NULL, category varchar(255) NOT NULL, sub_category varchar(255) NOT NULL, sub_sub_category varchar(255) NOT NULL, PRIMARY KEY (ID));
