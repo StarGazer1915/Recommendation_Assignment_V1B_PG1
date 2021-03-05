@@ -8,6 +8,8 @@ Er is geen gebruik gemaakt van externe algoritmes en/of bronnen
 Auteurs:
 Colin Vlienden
 Rutger Willard
+Justin Klein
+Bram van Leusden
 '''
 
 def connect_to_rdb(col,collection):
