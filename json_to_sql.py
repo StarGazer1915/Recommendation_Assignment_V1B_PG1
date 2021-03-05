@@ -1,6 +1,14 @@
-from progressbar import bar
 import psycopg2 as pysql
 import pymongo as pym
+
+'''
+Dit bestand is uniek en op eigen kennis geschreven.
+Er is geen gebruik gemaakt van externe algoritmes en/of bronnen
+
+Auteurs:
+Colin Vlienden
+Rutger Willard
+'''
 
 def connect_to_rdb(col,collection):
     try:
