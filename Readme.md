@@ -10,8 +10,6 @@ Dit bestand is gemaakt voor de opdracht "2. Document Store naar Relationele Data
 nodig is om één of meerdere collectie(s) uit MongoDB te halen en dit vervolgens te verwerken en op te slaan in onze relationele database. (PostgreSQL)
 
 De code maakt gebruik van de volgende libraries:
-- progressbar
-  (Deze library is voor de visuele representatie van het overzetten van data. Dit laat dus, d.m.v. de bijbehorende code, een laadbalk zien.)
 - pymongo (MongoDB)
   (Deze library is nodig om een connectie op te stellen met MongoDB en hier data van te verzamelen.)
 - psycopg2 (PostgreSQL)
