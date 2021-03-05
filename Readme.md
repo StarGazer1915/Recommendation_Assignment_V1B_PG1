@@ -3,7 +3,7 @@ In dit repository houden wij (Projectgroep 1 - V1B) ons groepsproject en de bijb
 Deze opdrachten/bestanden zijn voor ons als groep en bevatten geen opdrachten die individueel gemaakt zouden moeten worden.
 
 # Document Store naar Relationele Database
-Betreft bestanden: json_to_sql.py
+Betreft bestanden: json_to_sql.py, Probleem_analyse_FA2_SP.docx, database.sql
 
 Informatie:
 Dit bestand is gemaakt voor de opdracht "2. Document Store naar Relationele Database" van Structured Programming. Het bestand bevat de code die
