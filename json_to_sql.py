@@ -38,6 +38,7 @@ def products_to_rdb(col,cur,conn,collection):
                 (y["_id"],y["price"]["selling_price"],y["properties"]["stock"],y["sm"]["is_active"],y["recommendable"],y["gender"], y["category"], y["sub_category"], y["sub_sub_category"]))
             except KeyError:
                 continue
+            
         # commit inserts 
         conn.commit()
         print("Data Commited")
