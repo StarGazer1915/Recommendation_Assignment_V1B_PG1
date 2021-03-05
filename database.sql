@@ -1,3 +1,4 @@
+--DROP DATABASE huwebwinkel;
 CREATE DATABASE huwebwinkel;
 
 DROP TABLE IF EXISTS products;
@@ -10,7 +11,7 @@ CREATE TABLE products (
     in_stock INTEGER,
     active BOOLEAN,
     recommendable BOOLEAN,
-    gender VARCHAR(255) NULL,
+    gender VARCHAR(255),
     category VARCHAR(255),
     sub_category VARCHAR(255),
     sub_sub_category VARCHAR(255),
@@ -23,5 +24,3 @@ CREATE TABLE visitors(
     viewed_before VARCHAR(255),
     PRIMARY KEY (ID)
 )
-
-
