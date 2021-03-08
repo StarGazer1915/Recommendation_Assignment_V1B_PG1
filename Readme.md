@@ -1,4 +1,4 @@
-# Recommendation Engine Repository
+# Structured Programming Repository
 In dit repository houden wij (Projectgroep 1 - V1B) ons groepsproject en de bijbehorende Final Assignments van Structured Programming bij.
 Deze opdrachten/bestanden zijn voor ons als groep en bevatten geen opdrachten die individueel gemaakt zouden moeten worden.
 
